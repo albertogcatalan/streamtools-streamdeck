@@ -1,0 +1,15 @@
+{
+  "Description": "Envia una solicitud de acción a un widget de Streamtools con la API", 
+  "Name": "Streamtools Webhook", 
+  "Category": "Templates", 
+  "com.streamtools.webhooks.action": {
+    "Name": "Enviar acción", 
+    "Tooltip": "Envia una solicitud de acción a un widget de Streamtools con la API"
+  },
+  "Localization": {
+    "More info": "Más info",
+    "Message": "Mensaje",
+    "Click Me": "Haz click",
+    "Button": "Botón"
+  }
+}

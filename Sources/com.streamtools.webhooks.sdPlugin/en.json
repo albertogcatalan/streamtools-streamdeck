@@ -1,0 +1,15 @@
+{
+  "Description": "Send an action request to a Streamtools widget with remote webhook API", 
+  "Name": "Streamtools Webhook", 
+  "Category": "Templates", 
+  "com.streamtools.webhooks.action": {
+    "Name": "Send action", 
+    "Tooltip": "Send an action request to a Streamtools widget with remote webhook API"
+  },
+  "Localization": {
+    "More info": "More info",
+    "Message": "Message",
+    "Click Me": "Click Me",
+    "Button": "Button"
+  }
+}

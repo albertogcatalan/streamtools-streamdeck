@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover">
+        <meta name=apple-mobile-web-app-capable content=yes>
+        <meta name=apple-mobile-web-app-status-bar-style content=black>
+        <title>Streamtools Webhook</title>
+        <link rel="stylesheet" href="css/sdpi.css">
+    </head>
+    <body>
+      <div class="sdpi-wrapper">
+        <div class="sdpi-item">
+            <div class="sdpi-item-label">Streamtools API Key</div>
+            <input class="inspector sdpi-item-value" id="streamtoolsapikey" value="">
+        </div>
+        <div class="sdpi-item" id="select_single">
+            <div class="sdpi-item-label">Widget</div>
+            <select class="sdpi-item-value select inspector" id="widgettype">
+                <option value="timer">Timers</option>
+                <option value="studyroom">Study Room</option>
+                <option value="randomnamepicker">Random Picker</option>
+                <option value="flipcoin">Coin Flipper</option>
+                <option value="diceroller">Dice Roller</option>
+            </select>
+        </div>
+        <div class="sdpi-item">
+          <div class="sdpi-item-label">Widget ID</div>
+          <input class="inspector sdpi-item-value" id="widgetid" value="">
+      </div>
+        <div type="textarea" class="sdpi-item" id="message_only">
+            <div class="sdpi-item-label">Action</div>
+            <select class="sdpi-item-value select inspector" id="webhookpayload">
+              <option value="start">Start</option>
+          </select>
+        </div>
+        <div class="sdpi-item">
+            <button class="sdpi-item-value" id="save" onclick="save()">Save</button>
+        </div>
+    </div>
+    <script>            
+        if($SD) {
+            $SD.on("connected", function (jsonObj) {
+                console.log(`[connected] ${JSON.stringify(jsonObj)}`);
+                if(jsonObj.hasOwnProperty('actionInfo')) {
+                    settings = Utils.getProp(jsonObj, 'actionInfo.payload.settings', {});
+                    document.getElementById("streamtoolsapikey").value = settings.streamtoolsapikey || "st...";
+                    document.getElementById("widgettype").value = settings.widgettype || "Timers";
+                    document.getElementById("widgetid").value = settings.widgetid || "OT...";
+                    document.getElementById("webhookpayload").value = settings.webhookpayload || "Start";
+                    // [].forEach.call(document.querySelectorAll(".inspector"), element => {
+                    //     element.addEventListener("change", () => {
+                    //         var payload = {};
+                    //         [].forEach.call(document.querySelectorAll(".inspector"), element => {
+                    //             payload[element.id] = element.value;
+                    //         });
+                    //         $SD.api.sendToPlugin($SD.uuid, $SD.actionInfo["action"], payload);
+                    //     });
+                    // });
+                }
+            });
+        };
+        const save = function() {
+            if($SD) {
+                var payload = {};
+                [].forEach.call(document.querySelectorAll(".inspector"), element => {
+                    payload[element.id] = element.value;
+                });
+                $SD.api.sendToPlugin($SD.uuid, $SD.actionInfo["action"], payload);
+            }
+        }
+    </script>
+
+        <div class="sdpi-info-label hidden" style="top: -1000;" value=""></div>
+        <script src="js/common.js"></script>
+        <script src="js/common_pi.js"></script>
+        <script src="js/index_pi.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,41 @@
+{
+  "Actions": [
+    {
+      "Icon": "action/images/actionimage", 
+      "Name": "Webhooks", 
+      "States": [
+        {
+          "Image": "action/images/action",
+          "TitleAlignment": "bottom",
+          "FontSize": "10"
+        }
+      ], 
+      "SupportedInMultiActions": true,
+      "Tooltip": "Send an action request to a Streamtools widget with remote webhook API", 
+      "UUID": "com.streamtools.webhooks.action"
+    }
+  ], 
+  "SDKVersion": 2,
+  "Author": "Alberto González Catalán", 
+  "CodePath": "index.html", 
+  "PropertyInspectorPath": "propertyinspector/index.html", 
+  "Description": "Send an action request to a Streamtools widget with remote webhook API", 
+  "Name": "Streamtools Webhook", 
+  "Icon": "action/images/action", 
+  "URL": "https://streamtools.com", 
+  "Version": "1.0.0",
+  "OS": [
+    {
+        "Platform": "mac", 
+        "MinimumVersion" : "10.11"
+    },
+    {
+        "Platform": "windows", 
+        "MinimumVersion" : "10"
+    }
+  ],
+  "Software": 
+    {
+        "MinimumVersion" : "4.1"
+  }
+}
