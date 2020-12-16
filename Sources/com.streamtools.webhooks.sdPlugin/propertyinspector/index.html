@@ -7,6 +7,7 @@
         <meta name=apple-mobile-web-app-status-bar-style content=black>
         <title>Streamtools Webhook</title>
         <link rel="stylesheet" href="css/sdpi.css">
+        <script src="js/common.js"></script>
     </head>
     <body>
       <div class="sdpi-wrapper">
@@ -14,7 +15,7 @@
             <div class="sdpi-item-label">Streamtools API Key</div>
             <input class="inspector sdpi-item-value" id="streamtoolsapikey" value="">
         </div>
-        <div class="sdpi-item" id="select_single">
+        <div class="sdpi-item">
             <div class="sdpi-item-label">Widget</div>
             <select class="sdpi-item-value select inspector" id="widgettype">
                 <option value="timer">Timers</option>
@@ -28,14 +29,14 @@
           <div class="sdpi-item-label">Widget ID</div>
           <input class="inspector sdpi-item-value" id="widgetid" value="">
       </div>
-        <div type="textarea" class="sdpi-item" id="message_only">
-            <div class="sdpi-item-label">Action</div>
+        <div type="textarea" class="sdpi-item">
+            <div class="sdpi-item-label" data-localize="Action">Action</div>
             <select class="sdpi-item-value select inspector" id="webhookpayload">
               <option value="start">Start</option>
           </select>
         </div>
         <div class="sdpi-item">
-            <button class="sdpi-item-value" id="save" onclick="save()">Save</button>
+            <button class="sdpi-item-value" id="save" onclick="save()" data-localize="Save">Save</button>
         </div>
     </div>
     <script>            
@@ -71,9 +72,7 @@
         }
     </script>
 
-        <div class="sdpi-info-label hidden" style="top: -1000;" value=""></div>
-        <script src="js/common.js"></script>
-        <script src="js/common_pi.js"></script>
-        <script src="js/index_pi.js"></script>
+        
+        
     </body>
     </html>
