@@ -30,16 +30,14 @@ const action = {
             $SD.api.showAlert(jsonObj.context);
             return;
         }
-        let url = 'http://streamtools.local.com/webhook/'+jsonObj.payload.settings.widgettype+'/'+jsonObj.payload.settings.widgetid; 
+        let url = 'http://streamtools.local.com/webhook/'+jsonObj.payload.settings.widgettype+'/'+jsonObj.payload.settings.widgetid+'/'; 
         fetch(url, {
             "method": 'POST',
             "headers": {
                 "content-type": "application/json",
                 "X-API-KEY": jsonObj.payload.settings.streamtoolsapikey
             },
-            "body": {
-                "action": jsonObj.payload.settings.webhookpayload
-            }
+            "body": JSON.stringify({"action": jsonObj.payload.settings.webhookpayload})
         }).then(result => $SD.api.showOk(jsonObj.context), error => $SD.api.showAlert(jsonObj.context));
     }
 };

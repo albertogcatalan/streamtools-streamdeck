@@ -8,6 +8,8 @@
         <title>Streamtools Webhook</title>
         <link rel="stylesheet" href="css/sdpi.css">
         <script src="js/common.js"></script>
+        <script src="js/common_pi.js"></script>
+        <script src="js/index_pi.js"></script>
     </head>
     <body>
       <div class="sdpi-wrapper">
@@ -18,7 +20,7 @@
         <div class="sdpi-item">
             <div class="sdpi-item-label">Widget</div>
             <select class="sdpi-item-value select inspector" id="widgettype">
-                <option value="timer">Timers</option>
+                <option value="timer" selected>Timers</option>
                 <option value="studyroom">Study Room</option>
                 <option value="randomnamepicker">Random Picker</option>
                 <option value="flipcoin">Coin Flipper</option>
@@ -32,7 +34,7 @@
         <div type="textarea" class="sdpi-item">
             <div class="sdpi-item-label" data-localize="Action">Action</div>
             <select class="sdpi-item-value select inspector" id="webhookpayload">
-              <option value="start">Start</option>
+              <option value="start" selected>Start</option>
           </select>
         </div>
         <div class="sdpi-item">
@@ -46,9 +48,9 @@
                 if(jsonObj.hasOwnProperty('actionInfo')) {
                     settings = Utils.getProp(jsonObj, 'actionInfo.payload.settings', {});
                     document.getElementById("streamtoolsapikey").value = settings.streamtoolsapikey || "st...";
-                    document.getElementById("widgettype").value = settings.widgettype || "Timers";
-                    document.getElementById("widgetid").value = settings.widgetid || "OT...";
-                    document.getElementById("webhookpayload").value = settings.webhookpayload || "Start";
+                    document.getElementById("widgettype").value = settings.widgettype;
+                    document.getElementById("widgetid").value = settings.widgetid;
+                    document.getElementById("webhookpayload").value = settings.webhookpayload;
                     // [].forEach.call(document.querySelectorAll(".inspector"), element => {
                     //     element.addEventListener("change", () => {
                     //         var payload = {};
@@ -71,7 +73,7 @@
             }
         }
     </script>
-
+    <div class="sdpi-info-label hidden" style="top: -1000;" value=""></div>
         
         
     </body>

@@ -16,14 +16,14 @@
     }
   ], 
   "SDKVersion": 2,
-  "Author": "Alberto González Catalán", 
+  "Author": "Streamtools", 
   "CodePath": "index.html", 
   "PropertyInspectorPath": "propertyinspector/index.html", 
   "Description": "Send an action request to a Streamtools widget with remote webhook API", 
   "Name": "Streamtools Webhook", 
   "Icon": "action/images/action", 
   "URL": "https://streamtools.com", 
-  "Version": "1.0.4",
+  "Version": "1.0.13",
   "OS": [
     {
         "Platform": "mac", 

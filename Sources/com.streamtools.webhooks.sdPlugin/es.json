@@ -3,7 +3,7 @@
   "Name": "Streamtools Webhook", 
   "Category": "Templates", 
   "com.streamtools.webhooks.action": {
-    "Name": "Streamtools - Enviar acción", 
+    "Name": "Streamtools - Widgets", 
     "Tooltip": "Envia una solicitud de acción a un widget de Streamtools con la API"
   },
   "Localization": {
