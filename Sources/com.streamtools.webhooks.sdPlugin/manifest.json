@@ -23,7 +23,7 @@
   "Name": "Streamtools Webhook", 
   "Icon": "action/images/action", 
   "URL": "https://streamtools.com", 
-  "Version": "1.0.13",
+  "Version": "1.0.28",
   "OS": [
     {
         "Platform": "mac", 
